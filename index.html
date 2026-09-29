@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Focus Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-mode">
+    <div class="app-container">
+        <!-- Header: Tema -->
+        <header class="header">
+            <button id="theme-toggle" class="icon-btn">🌙</button>
+        </header>
+
+        <!-- Pengaturan Waktu -->
+        <section class="settings">
+            <div class="input-group">
+                <label>Fokus</label>
+                <select id="focus-time">
+                    <option value="15">15m</option>
+                    <option value="30" selected>30m</option>
+                    <option value="45">45m</option>
+                    <option value="60">60m</option>
+                    <option value="75">75m</option>
+                    <option value="90">90m</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Istirahat</label>
+                <select id="break-time">
+                    <option value="5" selected>5m</option>
+                    <option value="10">10m</option>
+                    <option value="15">15m</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Timer Utama -->
+        <main class="timer-container">
+            <p id="mode-label">MODE: FOKUS</p>
+            <div class="circle-wrapper">
+                <svg class="progress-ring" width="260" height="260">
+                    <circle class="ring-track" stroke-width="8" fill="transparent" r="120" cx="130" cy="130"/>
+                    <circle class="ring-progress" stroke-width="8" fill="transparent" r="120" cx="130" cy="130"/>
+                </svg>
+                <h1 id="time-display">30:00</h1>
+            </div>
+        </main>
+
+        <!-- Kontrol Bawah -->
+        <footer class="controls">
+            <button id="btn-start" class="action-btn primary">▶ Start</button>
+            <button id="btn-pause" class="action-btn">⏸ Pause</button>
+            <button id="btn-reset" class="action-btn">⏹ Reset</button>
+            <button id="btn-mute" class="icon-btn">🎵</button>
+        </footer>
+    </div>
+    
+    <!-- Audio Element -->
+    <!-- Menggunakan stream Lofi Radio publik sebagai contoh -->
+    <audio id="bg-music" loop>
+        <source src="https://lofi.stream.laut.fm/lofi" type="audio/mpeg">
+        Browser kamu tidak mendukung elemen audio.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
